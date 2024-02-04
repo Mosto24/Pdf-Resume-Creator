@@ -1,0 +1,84 @@
+/* html {
+    background-color: gray;
+}
+
+#root {
+    background-color: gray;
+}
+
+.App {
+} */
+
+.resumeCreaterForm {
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 15px;
+    margin-top: 50px;
+    padding: 5px;
+}
+
+.buttonPage {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.PageButton {
+    margin-top: 5%;
+}
+
+.App {
+    margin: 0 auto;
+}
+
+.inputName {
+    margin-bottom: 10px;
+}
+
+.personalInfo {
+    margin-bottom: 16px;
+}
+
+.contacts {
+    margin-bottom: 16px;
+}
+
+.location {
+    margin-bottom: 16px;
+}
+
+.workerPosition {
+    margin-bottom: 10px;
+}
+
+.desiredSalary {
+    margin-bottom: 16px;
+}
+
+.skills {
+    margin-bottom: 16px;
+}
+
+.experienceBtn {
+    margin-bottom: 16px;
+}
+
+.educationBtn {
+    margin-bottom: 16px;
+}
+
+.mb16px {
+    margin-bottom: 16px;
+}
+
+.mb10px {
+    margin-bottom: 10px;
+}
+
+.card {
+    white-space: pre-wrap;
+}
+
+.expBlock {
+    margin-bottom: 5px;
+}
