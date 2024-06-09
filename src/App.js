@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { jsPDF } from "jspdf";
 import font from "./Onest-Regular-normal.js";
 var callAddFont = function () {
@@ -173,8 +173,18 @@ function App() {
   let [educationJsx, setEducationJsx] = useState([]);
   let [exp, setExp] = useState([]);
   let [ed, setEd] = useState([]);
+  let inputName = useRef(null);
+  let inputSurname = useRef(null);
   const create = (e) => {
     e.preventDefault();
+    if (name === undefined || surname === undefined) {
+      inputName.current.style.border = "solid #ff0000";
+      inputSurname.current.style.border = "solid #ff0000";
+      return
+    } else {
+      inputName.current.style.border = "";
+      inputSurname.current.style.border = "";
+    }
     infoForPdf['Photo'] = photo;
     infoForPdf['PersonalInfo'] = [name, surname, patronymic, age];
     infoForPdf['Contacts'] = contacts;
@@ -246,10 +256,10 @@ function App() {
       </div>
       <div className="row personalInfo">
       <div className="col-4">
-        <input type="text" className="form-control inputName" placeholder="Имя*" aria-label="Имя" value={name} onChange={(e) => setName(e.target.value)}/>
+        <input ref={inputName} type="text" className="form-control inputName" placeholder="Имя*" aria-label="Имя" value={name} onChange={(e) => setName(e.target.value)}/>
       </div>
       <div className="col-4">
-        <input type="text" className="form-control" placeholder="Фамилия*" aria-label="Фамилия" value={surname} onChange={(e) => setSurname(e.target.value)}/>
+        <input ref={inputSurname} type="text" className="form-control" placeholder="Фамилия*" aria-label="Фамилия" value={surname} onChange={(e) => setSurname(e.target.value)}/>
       </div>
       <div className="col-4">
         <input type="text" className="form-control" placeholder="Отчество" aria-label="Отчество" value={patronymic} onChange={(e) => setPatronymic(e.target.value)}/>
@@ -283,7 +293,7 @@ function App() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">Заголовок модального окна</h1>
+              <h1 className="modal-title fs-5" id="exampleModalLabel">Опыт работы</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <div className="modal-body">
@@ -309,7 +319,7 @@ function App() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="educationModalLabel">Заголовок модального окна</h1>
+              <h1 className="modal-title fs-5" id="educationModalLabel">Образование</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <div className="modal-body">
