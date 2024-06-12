@@ -270,8 +270,7 @@ function App() {
       </div>
       <div className="col contacts"><input type="text" className="form-control" placeholder="Контактная информация" aria-label="Контактная информация" value={contacts} onChange={(e) => setContacts(e.target.value)}/></div>
       <div className="form-floating location">
-        <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" value={location} onChange={(e) => setLocation(e.target.value)}></textarea>
-        <label for="floatingTextarea2">Место жительства</label>
+        <div className="col"><input type="text" className="form-control" placeholder="Место жительства" aria-label="Место жительства" value={location} onChange={(e) => setLocation(e.target.value)}/></div>
         <div className="form-check">
           <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" onClick={(e) => setReadiness(e.target.checked)}/>
           <label className="form-check-label" for="flexCheckDefault">
@@ -281,10 +280,7 @@ function App() {
       </div>
       <div className="col workerPosition"><input type="text" className="form-control" placeholder="Желаемая должность" aria-label="Желаемая должность" value={post} onChange={(e) => setPost(e.target.value)}/></div>
       <div className="col desiredSalary"><input type="text" className="form-control" placeholder="Желаемый оклад" aria-label="Желаемый оклад" value={desiredSalary} onChange={(e) => setDesiredSalary(e.target.value)}/></div>
-      <div className="form-floating skills">
-        <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" value={skills} onChange={(e) => setSkills(e.target.value)}></textarea>
-        <label for="floatingTextarea2">Ключевые навыки</label>
-      </div>
+      <div className="col skills"><input type="text" className="form-control" placeholder="Ключевые навыки" aria-label="Ключевые навыки" value={skills} onChange={(e) => setSkills(e.target.value)}/></div>
       {experienceJsx}
       <button type="button" className="btn btn-primary col-12 experienceBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Добавить опыт
