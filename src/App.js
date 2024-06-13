@@ -79,7 +79,7 @@ function createPdf (infoForPdf) {
   }
   if(infoForPdf['desiredSalary']) {
     doc.text("Желаемый оклад:", 10, level+=10);
-    doc.text(infoForPdf['desiredSalary'] + '(руб.)', 10, level+=6);
+    doc.text(infoForPdf['desiredSalary'] + document.querySelector('.wallet').value, 10, level+=6);
   }
   if(infoForPdf['Location']) {
     doc.text("Место жительства:", 10, level+=10);
@@ -279,7 +279,13 @@ function App() {
         </div>
       </div>
       <div className="col workerPosition"><input type="text" className="form-control" placeholder="Желаемая должность" aria-label="Желаемая должность" value={post} onChange={(e) => setPost(e.target.value)}/></div>
-      <div className="col desiredSalary"><input type="text" className="form-control" placeholder="Желаемый оклад" aria-label="Желаемый оклад" value={desiredSalary} onChange={(e) => setDesiredSalary(e.target.value)}/></div>
+      <div className="col-6 desiredSalary"><input type="text" className="form-control" placeholder="Желаемый оклад" aria-label="Желаемый оклад" value={desiredSalary} onChange={(e) => setDesiredSalary(e.target.value)}/>
+      <select name="select" className="wallet">
+        <option value="₽">₽</option>
+        <option value="$">$</option>
+        <option value="€">€</option>
+      </select>
+      </div>
       <div className="col skills"><input type="text" className="form-control" placeholder="Ключевые навыки" aria-label="Ключевые навыки" value={skills} onChange={(e) => setSkills(e.target.value)}/></div>
       {experienceJsx}
       <button type="button" className="btn btn-primary col-12 experienceBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">

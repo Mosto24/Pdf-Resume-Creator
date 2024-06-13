@@ -52,11 +52,21 @@
 }
 
 .desiredSalary {
+    display: flex;
     margin-bottom: 16px;
 }
 
+.wallet {
+    margin-left: 10px;
+}
+
 .skills {
+    display: flex;
     margin-bottom: 16px;
+}
+
+.addSkill {
+    margin-left: 10px;
 }
 
 .experienceBtn {
