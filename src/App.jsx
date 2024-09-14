@@ -58,7 +58,7 @@ function App() {
     infoForPdf['Post'] = post;
     infoForPdf['desiredSalary'] = desiredSalary;
     infoForPdf['Experience'] = exp;
-    infoForPdf['Education'] = [];
+    infoForPdf['Education'] = ed;
     infoForPdf['Readiness'] = readiness;
     createPdf(infoForPdf);
   }
